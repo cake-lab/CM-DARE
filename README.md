@@ -2,9 +2,24 @@
 
 ## About
 
-This repo contains code and data for the paper [**Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers**]() in proceedings of ICDCS'20. 
+This repo contains code and data for the paper [**Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers**](https://arxiv.org/abs/2004.03072) in proceedings of ICDCS'20. 
 
-In this paper, we tackle the problem of how to achieve cost saving and speeding up distributed training using cloud-based GPU servers, fully exploiting the transient option provided by the cloud vendors. Transient cloud servers are just as powerful as regular ones, but can be revoked at any time by the vendors. We streamline the distributed training deployment, training and measurement with the framework CM-DARE built on top of TensorFlow and Tensor2Tensor. Our empirical datasets collected using CM-DARE include measurements from three GPU types, six ge- ographic regions, twenty convolutional neural networks, and thousands of Google Cloud servers. In addition, we demonstrate the feasibility of predicting training speed and overhead using regression-based models. We also discuss potential use cases of our performance modeling such as detecting and mitigating performance bottlenecks.
+In this paper, we tackle the problem of how to achieve cost saving and speeding up distributed training using cloud-based GPU servers, fully exploiting the transient option provided by the cloud vendors. Transient cloud servers are just as powerful as regular ones, but can be revoked at any time by the vendors. We streamline the distributed training deployment, training and measurement with the framework CM-DARE built on top of TensorFlow and Tensor2Tensor. Our empirical datasets collected using CM-DARE include measurements from three GPU types, six geographic regions, twenty convolutional neural networks, and thousands of Google Cloud servers. In addition, we demonstrate the feasibility of predicting training speed and overhead using regression-based models. We also discuss potential use cases of our performance modeling such as detecting and mitigating performance bottlenecks.
+
+#### Citation
+
+To be published in proceedings of ICDCS'20. 
+
+You can also site the Arxiv version:
+
+```bibtex
+@article{li2019cmdare,
+  title={Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers},
+  author={Shijian Li and Robert J. Walls and Tian Guo},
+  journal={arXiv preprint arXiv:2004.03072},
+  year={2019}
+}
+```
 
 #### Highlight
 
@@ -14,7 +29,7 @@ In this paper, we tackle the problem of how to achieve cost saving and speeding 
 
 - Potential use cases to further demostrate the potential of our performance modeling, particularly shedding light on the bottleneck problem in training.
 
-<div align="center"><img src="./data/img/speed_complexity_correlation.png" width="400" height="250"></div>
+<div align="center"><img src="./data/img/speed_complexity_correlation.png" width="400" height="400"></div>
 
 **Fig 1. Predicting training speed with particular GPU, using model complexity.**
 
@@ -22,7 +37,7 @@ In this paper, we tackle the problem of how to achieve cost saving and speeding 
 
 **Fig 2. Lifetime CDF of transient K80 GPU servers in 4 different regions over 156 instances.**
 
-<div align="center"><img src="./data/img/ps_bot_p100_1.png" width="400" height="250"></div>
+<div align="center"><img src="./data/img/ps_bot_p100_1.png" width="400" height="400"></div>
 
 **Fig 3. Use case: identifing bottleneck imposed by parameter servers.**
 
@@ -151,10 +166,6 @@ Alternatively, if you want to test out heterogeneous cluster config, for example
 ```bash
 python main.py --proj-name=YOUR_PROJ_NAME --cred-path=YOUR_GCE_CREDENTIAL_PATH --job-name=res32 --num-ps=1 --ps-core-num=4 --num-worker=4 --num-shard=1 --bucket-dir=gs://YOUR_BUCKET/ --model=resnet --hparam-set=resnet_cifar_32 --problem=image_cifar10 --train-steps=64000 --ckpt-frequency=100000 --automation-test=0 --setSlot=1 --maxWorker=8 --hetero=1 --gpu_array=k80 k80 p100 v100 --zone_array=us-west1-b us-west1-b us-west1-b us-central1-a us-east1-b
 ```
-
-## Citation
-
-To be published in proceedings of ICDCS'20.
 
 ## Acknowledgement
 
