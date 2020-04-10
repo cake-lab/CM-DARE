@@ -6,11 +6,13 @@ This repo contains code and data for the paper [**Characterizing and Modeling Di
 
 In this paper, we tackle the problem of how to achieve cost saving and speeding up distributed training using cloud-based GPU servers, fully exploiting the transient option provided by the cloud vendors. Transient cloud servers are just as powerful as regular ones, but can be revoked at any time by the vendors. We streamline the distributed training deployment, training and measurement with the framework CM-DARE built on top of TensorFlow and Tensor2Tensor. Our empirical datasets collected using CM-DARE include measurements from three GPU types, six geographic regions, twenty convolutional neural networks, and thousands of Google Cloud servers. In addition, we demonstrate the feasibility of predicting training speed and overhead using regression-based models. We also discuss potential use cases of our performance modeling such as detecting and mitigating performance bottlenecks.
 
-#### Citation
+## Citation
 
-To be published in proceedings of ICDCS'20. 
+If you use our code or data in your project, we ask you to cite our paper with the following bibtex.
 
-You can also site the Arxiv version:
+To be published in proceedings of **ICDCS'20**. 
+
+You can also cite our **arxiv version**:
 
 ```bibtex
 @article{li2019cmdare,
@@ -21,7 +23,7 @@ You can also site the Arxiv version:
 }
 ```
 
-#### Highlight
+## Highlight
 
 - Several performance models that predict distributed training on transient servers, e.g. the training speed and fault-tolerance overhead of GPU clusters, with as low as 3.4% mean absolute percentage error. We identified appropriate deployment scenarios for each performance model, including in a heterogeneous environment.
 
@@ -43,7 +45,7 @@ You can also site the Arxiv version:
 
 ## How to use the code
 
-#### Dependency and cloud image
+### Dependency and cloud image
 
 The code used custom cloud images for both GPU and CPU servers, and the images are currently not public. Thus in order to run it, you need to create two custom images first.
 
@@ -137,7 +139,7 @@ gcloud compute images create cpu-ubuntu18 \
 --source-disk instance-cpu
 ```
 
-#### Running the code
+### Running the code
 
 The code supports training models implemented in the Tensor2Tensor library. For the paper we mainly used ResNet models. The code currently supports Google Compute Engine.
 
