@@ -8,14 +8,21 @@ In this paper, we tackle the problem of how to achieve cost saving and speeding 
 
 ## Citation
 
-If you use our code or data in your project, we ask you to cite our paper with the following bibtex.
+If you use our CM-DARE data or code, please either cite the arxiv version or the ICDCS version:
 
-To be published in proceedings of **ICDCS'20**. 
-
-You can also cite our **arxiv version**:
-
+Bibtex for the ICDCS version
 ```bibtex
-@article{li2019cmdare,
+@INPROCEEDINGS{li2019cmdare_icdcs,  
+author={Li, Shijian and Walls, Robert J. and Guo, Tian},  
+booktitle={2020 IEEE 40th International Conference on Distributed Computing Systems (ICDCS)},   
+title={Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers},   
+year={2020}
+}
+```
+
+Bibtex for the arXiv version
+```bibtex
+@article{li2019cmdare_arxiv,
   title={Characterizing and Modeling Distributed Training with Transient Cloud GPU Servers},
   author={Shijian Li and Robert J. Walls and Tian Guo},
   journal={arXiv preprint arXiv:2004.03072},
